@@ -1,0 +1,90 @@
+package jpa.config;
+
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.ApiKey;
+import springfox.documentation.service.AuthorizationScope;
+import springfox.documentation.service.SecurityReference;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spi.service.contexts.SecurityContext;
+import springfox.documentation.spring.web.plugins.Docket;
+
+
+
+@Configuration
+public class SwaggerConfig {
+	String apiVersion = "1.0";
+	
+	String apiTitle = "한전MCS 안전감시 시스템 Api Server";
+	
+	String apiDescription = "한전MCS 안전감시 시스템 Api 명세서";
+	
+    	
+	/**
+	Docket: Swagger 설정의 핵심이 되는 Bean
+    useDefaultResponseMessages: Swagger 에서 제공해주는 기본 응답 코드 (200, 401, 403, 404). false 로 설정하면 기본 응답 코드를 노출하지 않음
+    apis: api 스펙이 작성되어 있는 패키지 (Controller) 를 지정
+    paths: apis 에 있는 API 중 특정 path 를 선택
+    apiInfo:Swagger UI 로 노출할 정보
+    
+    http://localhost:40301/swagger-ui/index.html
+	 */
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.OAS_30)
+                .useDefaultResponseMessages(false)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("api"))
+                .paths(PathSelectors.ant("/api/**"))
+                .build()
+                .apiInfo(apiInfo())
+                .securityContexts(Arrays.asList(securityContext()))
+                .securitySchemes(Arrays.asList(apiKey()));
+    }
+    
+    
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title(apiTitle)
+                .description(apiDescription)
+                .version(apiVersion)
+                .build();
+    }
+    
+    /**
+     * 
+     * @return
+     */
+	private ApiKey apiKey() {
+		return new ApiKey("Authorization", "Authorization", "header");
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	private SecurityContext securityContext() {
+		return SecurityContext.builder().securityReferences(defaultAuth()).build();
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	private List<SecurityReference> defaultAuth() {
+		AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
+		AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
+		authorizationScopes[0] = authorizationScope;
+		return Arrays.asList(new SecurityReference("Authorization", authorizationScopes));
+	}
+
+}

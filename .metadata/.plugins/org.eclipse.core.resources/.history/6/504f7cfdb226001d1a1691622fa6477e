@@ -1,0 +1,5 @@
+package jpa.config;
+
+public class SwaggerConfig {
+
+}
