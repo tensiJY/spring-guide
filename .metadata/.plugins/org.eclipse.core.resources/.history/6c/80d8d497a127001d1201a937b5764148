@@ -1,0 +1,13 @@
+package jpa.product;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+//	리포지토리 생성
+public interface ProductRepository extends JpaRepository<Product, Long>{
+	
+	@Override
+	default long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}
