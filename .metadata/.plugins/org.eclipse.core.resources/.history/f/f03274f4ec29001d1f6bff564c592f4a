@@ -1,0 +1,17 @@
+package jpa.product.dto;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+public class ProductResponseDTO {
+
+	private Long number;
+	private String name;
+	private int price;
+	private int stock;
+	
+	
+	
+}

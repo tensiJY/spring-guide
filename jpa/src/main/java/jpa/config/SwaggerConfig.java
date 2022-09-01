@@ -36,8 +36,8 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.OAS_30)
                 .useDefaultResponseMessages(false)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("api"))
-                .paths(PathSelectors.ant("/api/**"))
+                .apis(RequestHandlerSelectors.basePackage("jpa"))
+                .paths(PathSelectors.ant("/jpa/**"))
                 .build()
                 .apiInfo(apiInfo());
 //                .securityContexts(Arrays.asList(securityContext()))

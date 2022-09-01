@@ -1,0 +1,5 @@
+package jpa.product.dto;
+
+public class ProductResponseDTO {
+
+}
