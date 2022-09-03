@@ -1,0 +1,26 @@
+spring.datasource.driverClassName=org.mariadb.jdbc.Driver
+spring.datasource.url=jdbc:mariadb://localhost:13306/springboot
+spring.datasource.username=root
+spring.datasource.password=1234
+
+# 서버 기동시 삭제가
+#spring.jpa.hibernate.ddl-auto=create
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.properties.hibernate.show_sql=true
+spring.jpa.properties.hiberate.format_sql=true
+
+logging.level.org.hibernate.SQL=debug
+logging.level.org.hibernate.type.descriptor.sql=trace
+
+
+# 스웨거 2.6 이상 추가 
+spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+
+
+###### 정적 요소 추가시 서버 재시작 ##########
+# 자동재시작 사용여부
+spring.devtools.livereload.enabled=true
+# classpath 감지 주기 설정(선택사항)
+# poll-interval 값은 항상 quiet-period 보다 커야한다.
+spring.devtools.restart.poll-interval=2s
+spring.devtools.restart.quiet-period=1s

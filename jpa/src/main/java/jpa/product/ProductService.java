@@ -11,7 +11,7 @@ public interface ProductService {
 	
 	ProductResponseDTO changeProuctName(Long number, String name) throws Exception;
 	
-	void deleteProduct(Long Number) throws Exception;
+	void deleteProduct(Long number) throws Exception;
 		
 	
 }

@@ -37,7 +37,7 @@ public class SwaggerConfig {
                 .useDefaultResponseMessages(false)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("jpa"))
-                .paths(PathSelectors.ant("/jpa/**"))
+                .paths(PathSelectors.ant("/api/**"))
                 .build()
                 .apiInfo(apiInfo());
 //                .securityContexts(Arrays.asList(securityContext()))

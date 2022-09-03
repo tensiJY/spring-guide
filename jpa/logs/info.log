@@ -1,0 +1,781 @@
+[2022-09-03 14:41:17.334] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 14:41:17.334] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 14:41:17.463] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 14:41:17.465] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 14:41:17.498] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 14:41:17.499] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:41:17.499] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 14:41:17.499] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 14:41:17.503] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 14:41:17.503] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 164 ms
+[2022-09-03 14:41:17.517] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 14:41:17.519] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-7 - Starting...
+[2022-09-03 14:41:17.533] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-7 - Start completed.
+[2022-09-03 14:41:17.533] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 14:41:17.601] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 14:41:17.601] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 14:41:17.648] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 14:41:17.684] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 14:41:17.708] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:41:17.709] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 14:41:17.722] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.422 seconds (JVM running for 611.794)
+[2022-09-03 14:41:17.723] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 14:41:22.365] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 14:41:22.366] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 14:41:22.376] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 9 ms
+[2022-09-03 14:41:22.389] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call createProduct : ProductDTO(name=신규상품, price=1000, stock=2)
+[2022-09-03 14:41:41.040] [INFO ] [http-nio-8080-exec-2] jpa.product.ProductController call getProduct : 1
+[2022-09-03 14:41:49.553] [INFO ] [http-nio-8080-exec-3] jpa.product.ProductController call getProduct : 2
+[2022-09-03 14:41:49.564] [ERROR] [http-nio-8080-exec-3] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.EntityNotFoundException: Unable to find jpa.product.Product with id 2] with root cause
+javax.persistence.EntityNotFoundException: Unable to find jpa.product.Product with id 2
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$JpaEntityNotFoundDelegate.handleEntityNotFound(EntityManagerFactoryBuilderImpl.java:177)
+	at org.hibernate.proxy.AbstractLazyInitializer.checkTargetState(AbstractLazyInitializer.java:298)
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:187)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:322)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:45)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:95)
+	at jpa.product.Product$HibernateProxy$qfPqwqNh.getName(Unknown Source)
+	at jpa.product.ProductServiceImpl.getProduct(ProductServiceImpl.java:27)
+	at jpa.product.ProductController.getProduct(ProductController.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2022-09-03 14:54:41.598] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 14:54:41.615] [INFO ] [Thread-27] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:54:41.615] [INFO ] [Thread-27] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 14:54:41.616] [INFO ] [Thread-27] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 14:54:41.619] [INFO ] [Thread-27] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:54:41.621] [INFO ] [Thread-27] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:54:41.624] [INFO ] [Thread-27] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 14:54:41.625] [INFO ] [Thread-27] com.zaxxer.hikari.HikariDataSource HikariPool-7 - Shutdown initiated...
+[2022-09-03 14:54:41.651] [INFO ] [Thread-27] com.zaxxer.hikari.HikariDataSource HikariPool-7 - Shutdown completed.
+[2022-09-03 14:54:41.764] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 14:54:41.764] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 14:54:41.864] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 14:54:41.867] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 14:54:41.900] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 14:54:41.901] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:54:41.901] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 14:54:41.901] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 14:54:41.905] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 14:54:41.905] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 140 ms
+[2022-09-03 14:54:41.919] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 14:54:41.921] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-8 - Starting...
+[2022-09-03 14:54:41.932] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-8 - Start completed.
+[2022-09-03 14:54:41.932] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 14:54:41.996] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 14:54:41.996] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 14:54:42.043] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 14:54:42.081] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 14:54:42.106] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:54:42.107] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 14:54:42.119] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.38 seconds (JVM running for 1416.195)
+[2022-09-03 14:54:42.120] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 14:57:11.842] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 14:57:11.855] [INFO ] [Thread-31] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:57:11.855] [INFO ] [Thread-31] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 14:57:11.859] [INFO ] [Thread-31] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:57:11.860] [INFO ] [Thread-31] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:57:11.862] [INFO ] [Thread-31] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 14:57:11.863] [INFO ] [Thread-31] com.zaxxer.hikari.HikariDataSource HikariPool-8 - Shutdown initiated...
+[2022-09-03 14:57:11.888] [INFO ] [Thread-31] com.zaxxer.hikari.HikariDataSource HikariPool-8 - Shutdown completed.
+[2022-09-03 14:57:11.961] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 14:57:11.961] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 14:57:12.059] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 14:57:12.061] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 14:57:12.096] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 14:57:12.097] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:57:12.097] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 14:57:12.097] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 14:57:12.101] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 14:57:12.101] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 139 ms
+[2022-09-03 14:57:12.117] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 14:57:12.119] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-9 - Starting...
+[2022-09-03 14:57:12.143] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-9 - Start completed.
+[2022-09-03 14:57:12.143] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 14:57:12.152] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 14:57:12.153] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 14:57:12.195] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 14:57:12.228] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 14:57:12.256] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:57:12.257] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 14:57:12.273] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.339 seconds (JVM running for 1566.355)
+[2022-09-03 14:57:12.273] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 14:59:03.756] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 14:59:03.771] [INFO ] [Thread-35] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:59:03.772] [INFO ] [Thread-35] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 14:59:03.777] [INFO ] [Thread-35] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:59:03.778] [INFO ] [Thread-35] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:59:03.784] [INFO ] [Thread-35] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 14:59:03.785] [INFO ] [Thread-35] com.zaxxer.hikari.HikariDataSource HikariPool-9 - Shutdown initiated...
+[2022-09-03 14:59:03.817] [INFO ] [Thread-35] com.zaxxer.hikari.HikariDataSource HikariPool-9 - Shutdown completed.
+[2022-09-03 14:59:03.921] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 14:59:03.921] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 14:59:04.019] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 14:59:04.022] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 14:59:04.055] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 14:59:04.056] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:59:04.056] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 14:59:04.056] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 14:59:04.060] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 14:59:04.060] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 138 ms
+[2022-09-03 14:59:04.073] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 14:59:04.075] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-10 - Starting...
+[2022-09-03 14:59:04.088] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-10 - Start completed.
+[2022-09-03 14:59:04.088] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 14:59:04.098] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 14:59:04.098] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 14:59:04.137] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 14:59:04.171] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 14:59:04.196] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 14:59:04.197] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 14:59:04.209] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.317 seconds (JVM running for 1678.295)
+[2022-09-03 14:59:04.209] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:03:00.331] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:03:00.346] [INFO ] [Thread-39] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:03:00.347] [INFO ] [Thread-39] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:03:00.353] [INFO ] [Thread-39] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:03:00.355] [INFO ] [Thread-39] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:03:00.359] [INFO ] [Thread-39] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:03:00.360] [INFO ] [Thread-39] com.zaxxer.hikari.HikariDataSource HikariPool-10 - Shutdown initiated...
+[2022-09-03 15:03:00.395] [INFO ] [Thread-39] com.zaxxer.hikari.HikariDataSource HikariPool-10 - Shutdown completed.
+[2022-09-03 15:03:00.471] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:03:00.472] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:03:00.562] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:03:00.565] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:03:00.598] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:03:00.599] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:03:00.599] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:03:00.599] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:03:00.603] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:03:00.603] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 131 ms
+[2022-09-03 15:03:00.616] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:03:00.618] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-11 - Starting...
+[2022-09-03 15:03:00.630] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-11 - Start completed.
+[2022-09-03 15:03:00.630] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:03:00.638] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:03:00.639] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:03:00.678] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:03:00.710] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:03:00.734] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:03:00.735] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:03:00.747] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.303 seconds (JVM running for 1914.844)
+[2022-09-03 15:03:00.748] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:03:14.013] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:03:14.013] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:03:14.016] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 3 ms
+[2022-09-03 15:03:20.190] [INFO ] [http-nio-8080-exec-6] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:03:20.215] [ERROR] [http-nio-8080-exec-6] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.EntityNotFoundException: Unable to find jpa.product.Product with id 1] with root cause
+javax.persistence.EntityNotFoundException: Unable to find jpa.product.Product with id 1
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$JpaEntityNotFoundDelegate.handleEntityNotFound(EntityManagerFactoryBuilderImpl.java:177)
+	at org.hibernate.proxy.AbstractLazyInitializer.checkTargetState(AbstractLazyInitializer.java:298)
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:187)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:322)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:45)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:95)
+	at jpa.product.Product$HibernateProxy$mIERAgFB.getName(Unknown Source)
+	at jpa.product.ProductServiceImpl.getProduct(ProductServiceImpl.java:27)
+	at jpa.product.ProductController.getProduct(ProductController.java:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2022-09-03 15:03:42.490] [INFO ] [http-nio-8080-exec-7] jpa.product.ProductController call createProduct : ProductDTO(name=자바의 정석, price=1000, stock=10)
+[2022-09-03 15:03:55.258] [INFO ] [http-nio-8080-exec-8] jpa.product.ProductController call createProduct : ProductDTO(name=코딩의 정석, price=10000, stock=100)
+[2022-09-03 15:03:59.132] [INFO ] [http-nio-8080-exec-9] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:04:42.211] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:04:42.220] [INFO ] [Thread-43] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:04:42.220] [INFO ] [Thread-43] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:04:42.220] [INFO ] [Thread-43] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:04:42.224] [INFO ] [Thread-43] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:04:42.226] [INFO ] [Thread-43] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:04:42.229] [INFO ] [Thread-43] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:04:42.232] [INFO ] [Thread-43] com.zaxxer.hikari.HikariDataSource HikariPool-11 - Shutdown initiated...
+[2022-09-03 15:04:42.265] [INFO ] [Thread-43] com.zaxxer.hikari.HikariDataSource HikariPool-11 - Shutdown completed.
+[2022-09-03 15:04:42.337] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:04:42.337] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:04:42.430] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:04:42.432] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:04:42.465] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:04:42.465] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:04:42.465] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:04:42.465] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:04:42.470] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:04:42.470] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 132 ms
+[2022-09-03 15:04:42.482] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:04:42.484] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-12 - Starting...
+[2022-09-03 15:04:42.494] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-12 - Start completed.
+[2022-09-03 15:04:42.494] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:04:42.503] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:04:42.503] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:04:42.545] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:04:42.576] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:04:42.603] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:04:42.603] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:04:42.616] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.298 seconds (JVM running for 2016.716)
+[2022-09-03 15:04:42.617] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:04:49.452] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:04:49.452] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:04:49.456] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 4 ms
+[2022-09-03 15:04:49.469] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:04:55.582] [INFO ] [http-nio-8080-exec-2] jpa.product.ProductController call getProduct : 2
+[2022-09-03 15:07:02.251] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:07:02.272] [INFO ] [Thread-47] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:07:02.272] [INFO ] [Thread-47] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:07:02.273] [INFO ] [Thread-47] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:07:02.278] [INFO ] [Thread-47] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:07:02.280] [INFO ] [Thread-47] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:07:02.283] [INFO ] [Thread-47] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:07:02.284] [INFO ] [Thread-47] com.zaxxer.hikari.HikariDataSource HikariPool-12 - Shutdown initiated...
+[2022-09-03 15:07:02.315] [INFO ] [Thread-47] com.zaxxer.hikari.HikariDataSource HikariPool-12 - Shutdown completed.
+[2022-09-03 15:07:02.402] [ERROR] [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'logging.level.org.hibernate.sql' to org.springframework.boot.logging.LogLevel:
+
+    Property: logging.level.org.hibernate.sql
+    Value: "Â debug"
+    Origin: class path resource [application.properties] - 12:35
+    Reason: failed to convert java.lang.String to org.springframework.boot.logging.LogLevel (caused by java.lang.IllegalArgumentException: No enum constant org.springframework.boot.logging.LogLevel.Â debug)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    DEBUG
+    ERROR
+    FATAL
+    INFO
+    OFF
+    TRACE
+    WARN
+
+[2022-09-03 15:07:37.649] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:07:37.649] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:07:37.760] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:07:37.762] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:07:37.797] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:07:37.798] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:07:37.798] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:07:37.798] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:07:37.807] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:07:37.807] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 156 ms
+[2022-09-03 15:07:37.823] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:07:37.826] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-13 - Starting...
+[2022-09-03 15:07:37.847] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-13 - Start completed.
+[2022-09-03 15:07:37.847] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:07:37.858] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:07:37.858] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:07:37.902] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:07:37.935] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:07:37.962] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:07:37.963] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:07:37.978] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.378 seconds (JVM running for 2192.086)
+[2022-09-03 15:07:37.978] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:07:40.843] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:07:40.843] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:07:40.844] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
+[2022-09-03 15:07:40.848] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 2
+[2022-09-03 15:10:29.735] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:10:29.748] [INFO ] [Thread-51] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:29.748] [INFO ] [Thread-51] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:10:29.749] [INFO ] [Thread-51] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:10:29.754] [INFO ] [Thread-51] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:29.755] [INFO ] [Thread-51] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:29.759] [INFO ] [Thread-51] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:10:29.760] [INFO ] [Thread-51] com.zaxxer.hikari.HikariDataSource HikariPool-13 - Shutdown initiated...
+[2022-09-03 15:10:29.789] [INFO ] [Thread-51] com.zaxxer.hikari.HikariDataSource HikariPool-13 - Shutdown completed.
+[2022-09-03 15:10:29.877] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:10:29.877] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:10:29.968] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:10:29.971] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:10:30.004] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:10:30.004] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:30.004] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:10:30.004] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:10:30.008] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:10:30.008] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 131 ms
+[2022-09-03 15:10:30.021] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:10:30.023] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-14 - Starting...
+[2022-09-03 15:10:30.039] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-14 - Start completed.
+[2022-09-03 15:10:30.040] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:10:30.048] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:10:30.048] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:10:30.087] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:10:30.120] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:10:30.144] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:30.145] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:10:30.157] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.3 seconds (JVM running for 2364.272)
+[2022-09-03 15:10:30.158] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:10:39.189] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:10:39.193] [INFO ] [Thread-57] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:39.193] [INFO ] [Thread-57] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:10:39.196] [INFO ] [Thread-57] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:39.197] [INFO ] [Thread-57] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:39.200] [INFO ] [Thread-57] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:10:39.200] [INFO ] [Thread-57] com.zaxxer.hikari.HikariDataSource HikariPool-14 - Shutdown initiated...
+[2022-09-03 15:10:39.223] [INFO ] [Thread-57] com.zaxxer.hikari.HikariDataSource HikariPool-14 - Shutdown completed.
+[2022-09-03 15:10:39.291] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:10:39.291] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:10:39.384] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:10:39.387] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:10:39.421] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:10:39.422] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:39.422] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:10:39.422] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:10:39.426] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:10:39.426] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 134 ms
+[2022-09-03 15:10:39.439] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:10:39.441] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-15 - Starting...
+[2022-09-03 15:10:39.454] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-15 - Start completed.
+[2022-09-03 15:10:39.454] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:10:39.463] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:10:39.463] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:10:39.502] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:10:39.531] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:10:39.553] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:10:39.554] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:10:39.568] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.306 seconds (JVM running for 2373.683)
+[2022-09-03 15:10:39.569] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:10:44.963] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:10:44.963] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:10:44.975] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 11 ms
+[2022-09-03 15:10:44.982] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 2
+[2022-09-03 15:11:52.904] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:11:52.918] [INFO ] [Thread-61] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:11:52.918] [INFO ] [Thread-61] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:11:52.919] [INFO ] [Thread-61] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:11:52.924] [INFO ] [Thread-61] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:11:52.925] [INFO ] [Thread-61] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:11:52.928] [INFO ] [Thread-61] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:11:52.930] [INFO ] [Thread-61] com.zaxxer.hikari.HikariDataSource HikariPool-15 - Shutdown initiated...
+[2022-09-03 15:11:52.965] [INFO ] [Thread-61] com.zaxxer.hikari.HikariDataSource HikariPool-15 - Shutdown completed.
+[2022-09-03 15:11:53.036] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:11:53.036] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:11:53.141] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:11:53.144] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:11:53.187] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:11:53.187] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:11:53.187] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:11:53.187] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:11:53.191] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:11:53.192] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 155 ms
+[2022-09-03 15:11:53.206] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:11:53.208] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-16 - Starting...
+[2022-09-03 15:11:53.223] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-16 - Start completed.
+[2022-09-03 15:11:53.223] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:11:53.232] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:11:53.232] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:11:53.276] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:11:53.310] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:11:53.341] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:11:53.341] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:11:53.353] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.335 seconds (JVM running for 2447.472)
+[2022-09-03 15:11:53.354] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:11:56.223] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:11:56.223] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:11:56.225] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 1 ms
+[2022-09-03 15:11:56.228] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 2
+[2022-09-03 15:13:43.635] [INFO ] [http-nio-8080-exec-6] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:16:13.552] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:16:13.569] [INFO ] [Thread-65] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:16:13.570] [INFO ] [Thread-65] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:16:13.570] [INFO ] [Thread-65] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:16:13.574] [INFO ] [Thread-65] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:16:13.576] [INFO ] [Thread-65] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:16:13.579] [INFO ] [Thread-65] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:16:13.581] [INFO ] [Thread-65] com.zaxxer.hikari.HikariDataSource HikariPool-16 - Shutdown initiated...
+[2022-09-03 15:16:13.616] [INFO ] [Thread-65] com.zaxxer.hikari.HikariDataSource HikariPool-16 - Shutdown completed.
+[2022-09-03 15:16:13.707] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:16:13.707] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:16:13.806] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:16:13.808] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:16:13.843] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:16:13.843] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:16:13.843] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:16:13.843] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:16:13.847] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:16:13.847] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 139 ms
+[2022-09-03 15:16:13.861] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:16:13.863] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-17 - Starting...
+[2022-09-03 15:16:13.878] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-17 - Start completed.
+[2022-09-03 15:16:13.878] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:16:13.889] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:16:13.889] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:16:13.930] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:16:13.959] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:16:13.983] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:16:13.987] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:16:13.997] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.318 seconds (JVM running for 2708.127)
+[2022-09-03 15:16:13.998] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:18:09.502] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:18:09.522] [INFO ] [Thread-69] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:18:09.523] [INFO ] [Thread-69] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:18:09.531] [INFO ] [Thread-69] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:18:09.532] [INFO ] [Thread-69] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:18:09.536] [INFO ] [Thread-69] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:18:09.537] [INFO ] [Thread-69] com.zaxxer.hikari.HikariDataSource HikariPool-17 - Shutdown initiated...
+[2022-09-03 15:18:09.571] [INFO ] [Thread-69] com.zaxxer.hikari.HikariDataSource HikariPool-17 - Shutdown completed.
+[2022-09-03 15:18:09.671] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:18:09.671] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:18:09.776] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:18:09.778] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:18:09.815] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:18:09.815] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:18:09.815] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:18:09.815] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:18:09.820] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:18:09.820] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 148 ms
+[2022-09-03 15:18:09.833] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:18:09.835] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-18 - Starting...
+[2022-09-03 15:18:09.846] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-18 - Start completed.
+[2022-09-03 15:18:09.846] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:18:09.855] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:18:09.855] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:18:09.899] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:18:09.932] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:18:09.958] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:18:09.958] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:18:09.973] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.332 seconds (JVM running for 2824.107)
+[2022-09-03 15:18:09.973] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:18:15.399] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:18:15.399] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:18:15.401] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 2 ms
+[2022-09-03 15:18:15.404] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:20:15.556] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:20:15.564] [INFO ] [Thread-73] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:15.565] [INFO ] [Thread-73] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:20:15.565] [INFO ] [Thread-73] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:20:15.571] [INFO ] [Thread-73] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:15.572] [INFO ] [Thread-73] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:15.575] [INFO ] [Thread-73] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:20:15.580] [INFO ] [Thread-73] com.zaxxer.hikari.HikariDataSource HikariPool-18 - Shutdown initiated...
+[2022-09-03 15:20:15.609] [INFO ] [Thread-73] com.zaxxer.hikari.HikariDataSource HikariPool-18 - Shutdown completed.
+[2022-09-03 15:20:15.690] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:20:15.690] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:20:15.788] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:20:15.791] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:20:15.831] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:20:15.831] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:15.832] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:20:15.832] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:20:15.836] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:20:15.836] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 145 ms
+[2022-09-03 15:20:15.851] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:20:15.853] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-19 - Starting...
+[2022-09-03 15:20:15.864] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-19 - Start completed.
+[2022-09-03 15:20:15.864] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:20:15.873] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:20:15.873] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:20:15.912] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:20:15.943] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:20:15.968] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:15.968] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:20:15.983] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.312 seconds (JVM running for 2950.123)
+[2022-09-03 15:20:15.984] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:20:18.983] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:20:18.987] [INFO ] [Thread-77] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:18.988] [INFO ] [Thread-77] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:20:18.989] [INFO ] [Thread-77] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:18.990] [INFO ] [Thread-77] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:18.992] [INFO ] [Thread-77] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:20:18.993] [INFO ] [Thread-77] com.zaxxer.hikari.HikariDataSource HikariPool-19 - Shutdown initiated...
+[2022-09-03 15:20:19.016] [INFO ] [Thread-77] com.zaxxer.hikari.HikariDataSource HikariPool-19 - Shutdown completed.
+[2022-09-03 15:20:19.067] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:20:19.067] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:20:19.146] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:20:19.148] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 1 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:20:19.181] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:20:19.181] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:19.181] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:20:19.181] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:20:19.185] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:20:19.185] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 117 ms
+[2022-09-03 15:20:19.199] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:20:19.201] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-20 - Starting...
+[2022-09-03 15:20:19.207] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-20 - Start completed.
+[2022-09-03 15:20:19.207] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:20:19.215] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:20:19.215] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:20:19.253] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:20:19.282] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:20:19.305] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:20:19.305] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:20:19.316] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.26 seconds (JVM running for 2953.455)
+[2022-09-03 15:20:19.317] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:21:20.585] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:21:20.597] [INFO ] [Thread-81] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:21:20.597] [INFO ] [Thread-81] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:21:20.602] [INFO ] [Thread-81] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:21:20.604] [INFO ] [Thread-81] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:21:20.607] [INFO ] [Thread-81] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:21:20.608] [INFO ] [Thread-81] com.zaxxer.hikari.HikariDataSource HikariPool-20 - Shutdown initiated...
+[2022-09-03 15:21:20.643] [INFO ] [Thread-81] com.zaxxer.hikari.HikariDataSource HikariPool-20 - Shutdown completed.
+[2022-09-03 15:21:20.761] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:21:20.761] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:21:20.850] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:21:20.853] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:21:20.888] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:21:20.888] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:21:20.888] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:21:20.888] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:21:20.892] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:21:20.892] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 130 ms
+[2022-09-03 15:21:20.905] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:21:20.907] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-21 - Starting...
+[2022-09-03 15:21:20.920] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-21 - Start completed.
+[2022-09-03 15:21:20.920] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:21:20.928] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:21:20.928] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:21:20.965] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:21:20.994] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:21:21.018] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:21:21.019] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:21:21.029] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.29 seconds (JVM running for 3015.172)
+[2022-09-03 15:21:21.030] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:21:30.782] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:21:30.782] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:21:30.784] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 2 ms
+[2022-09-03 15:21:30.796] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:23:12.538] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:23:12.547] [INFO ] [Thread-85] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:23:12.547] [INFO ] [Thread-85] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:23:12.548] [INFO ] [Thread-85] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:23:12.552] [INFO ] [Thread-85] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:23:12.554] [INFO ] [Thread-85] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:23:12.556] [INFO ] [Thread-85] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:23:12.558] [INFO ] [Thread-85] com.zaxxer.hikari.HikariDataSource HikariPool-21 - Shutdown initiated...
+[2022-09-03 15:23:12.585] [INFO ] [Thread-85] com.zaxxer.hikari.HikariDataSource HikariPool-21 - Shutdown completed.
+[2022-09-03 15:23:12.669] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:23:12.669] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:23:12.761] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:23:12.764] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:23:12.799] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:23:12.799] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:23:12.799] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:23:12.799] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:23:12.803] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:23:12.803] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 133 ms
+[2022-09-03 15:23:12.816] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:23:12.818] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-22 - Starting...
+[2022-09-03 15:23:12.828] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-22 - Start completed.
+[2022-09-03 15:23:12.828] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:23:12.837] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:23:12.837] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:23:12.876] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:23:12.905] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:23:12.928] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:23:12.929] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:23:12.941] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.297 seconds (JVM running for 3127.088)
+[2022-09-03 15:23:12.942] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:23:22.472] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:23:22.472] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:23:22.474] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 2 ms
+[2022-09-03 15:23:22.477] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:24:34.310] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:24:34.319] [INFO ] [Thread-89] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:24:34.319] [INFO ] [Thread-89] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:24:34.320] [INFO ] [Thread-89] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:24:34.325] [INFO ] [Thread-89] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:24:34.326] [INFO ] [Thread-89] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:24:34.329] [INFO ] [Thread-89] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:24:34.330] [INFO ] [Thread-89] com.zaxxer.hikari.HikariDataSource HikariPool-22 - Shutdown initiated...
+[2022-09-03 15:24:34.359] [INFO ] [Thread-89] com.zaxxer.hikari.HikariDataSource HikariPool-22 - Shutdown completed.
+[2022-09-03 15:24:34.455] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:24:34.455] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:24:34.553] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:24:34.556] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:24:34.597] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:24:34.597] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:24:34.597] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:24:34.597] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:24:34.601] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:24:34.601] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 145 ms
+[2022-09-03 15:24:34.614] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:24:34.616] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-23 - Starting...
+[2022-09-03 15:24:34.626] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-23 - Start completed.
+[2022-09-03 15:24:34.626] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:24:34.635] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:24:34.635] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:24:34.673] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:24:34.702] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:24:34.725] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:24:34.725] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:24:34.736] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.307 seconds (JVM running for 3208.886)
+[2022-09-03 15:24:34.737] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:24:39.239] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:24:39.239] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:24:39.241] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 2 ms
+[2022-09-03 15:24:39.243] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:26:28.220] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:26:28.232] [INFO ] [Thread-93] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:28.232] [INFO ] [Thread-93] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:26:28.233] [INFO ] [Thread-93] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:26:28.238] [INFO ] [Thread-93] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:28.239] [INFO ] [Thread-93] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:28.242] [INFO ] [Thread-93] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:26:28.243] [INFO ] [Thread-93] com.zaxxer.hikari.HikariDataSource HikariPool-23 - Shutdown initiated...
+[2022-09-03 15:26:28.272] [INFO ] [Thread-93] com.zaxxer.hikari.HikariDataSource HikariPool-23 - Shutdown completed.
+[2022-09-03 15:26:28.349] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:26:28.349] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:26:28.450] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:26:28.453] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:26:28.491] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:26:28.492] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:28.492] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:26:28.492] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:26:28.496] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:26:28.496] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 146 ms
+[2022-09-03 15:26:28.509] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:26:28.511] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-24 - Starting...
+[2022-09-03 15:26:28.525] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-24 - Start completed.
+[2022-09-03 15:26:28.525] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:26:28.533] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:26:28.533] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:26:28.571] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:26:28.600] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:26:28.623] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:28.624] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:26:28.636] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.306 seconds (JVM running for 3322.791)
+[2022-09-03 15:26:28.637] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:26:33.636] [INFO ] [http-nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-09-03 15:26:33.637] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+[2022-09-03 15:26:33.650] [INFO ] [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet Completed initialization in 13 ms
+[2022-09-03 15:26:33.667] [INFO ] [http-nio-8080-exec-1] jpa.product.ProductController call getProduct : 1
+[2022-09-03 15:26:51.741] [INFO ] [File Watcher] org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2022-09-03 15:26:51.747] [INFO ] [Thread-97] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:51.748] [INFO ] [Thread-97] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:26:51.748] [INFO ] [Thread-97] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2022-09-03 15:26:51.751] [INFO ] [Thread-97] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:51.752] [INFO ] [Thread-97] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:51.776] [INFO ] [Thread-97] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:26:51.777] [INFO ] [Thread-97] com.zaxxer.hikari.HikariDataSource HikariPool-24 - Shutdown initiated...
+[2022-09-03 15:26:51.812] [INFO ] [Thread-97] com.zaxxer.hikari.HikariDataSource HikariPool-24 - Shutdown completed.
+[2022-09-03 15:26:51.903] [INFO ] [restartedMain] jpa.JpaApplication Starting JpaApplication using Java 17.0.4 on parkjuyoung.local with PID 2534 (/Users/peter/Documents/dev/sts/study/jpa/bin/main started by peter in /Users/peter/Documents/dev/sts/study/jpa)
+[2022-09-03 15:26:51.903] [INFO ] [restartedMain] jpa.JpaApplication No active profile set, falling back to 1 default profile: "default"
+[2022-09-03 15:26:51.996] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-09-03 15:26:51.998] [INFO ] [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 2 ms. Found 1 JPA repository interfaces.
+[2022-09-03 15:26:52.033] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+[2022-09-03 15:26:52.033] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:52.034] [INFO ] [restartedMain] org.apache.catalina.core.StandardService Starting service [Tomcat]
+[2022-09-03 15:26:52.034] [INFO ] [restartedMain] org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.65]
+[2022-09-03 15:26:52.038] [INFO ] [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+[2022-09-03 15:26:52.038] [INFO ] [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 134 ms
+[2022-09-03 15:26:52.051] [INFO ] [restartedMain] org.hibernate.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-09-03 15:26:52.053] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-25 - Starting...
+[2022-09-03 15:26:52.067] [INFO ] [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-25 - Start completed.
+[2022-09-03 15:26:52.067] [INFO ] [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+[2022-09-03 15:26:52.077] [INFO ] [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-09-03 15:26:52.077] [INFO ] [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:26:52.135] [WARN ] [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-09-03 15:26:52.171] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer LiveReload server is running on port 35729
+[2022-09-03 15:26:52.198] [INFO ] [restartedMain] org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:26:52.199] [INFO ] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+[2022-09-03 15:26:52.218] [INFO ] [restartedMain] jpa.JpaApplication Started JpaApplication in 0.341 seconds (JVM running for 3346.374)
+[2022-09-03 15:26:52.219] [INFO ] [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+[2022-09-03 15:39:05.172] [INFO ] [RMI TCP Connection(144)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin Application shutdown requested.
+[2022-09-03 15:39:05.177] [INFO ] [RMI TCP Connection(144)-127.0.0.1] org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:39:05.178] [INFO ] [RMI TCP Connection(144)-127.0.0.1] org.apache.catalina.core.StandardService Stopping service [Tomcat]
+[2022-09-03 15:39:05.185] [INFO ] [RMI TCP Connection(144)-127.0.0.1] org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:39:05.185] [INFO ] [RMI TCP Connection(144)-127.0.0.1] org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+[2022-09-03 15:39:05.187] [INFO ] [RMI TCP Connection(144)-127.0.0.1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-09-03 15:39:05.188] [INFO ] [RMI TCP Connection(144)-127.0.0.1] com.zaxxer.hikari.HikariDataSource HikariPool-25 - Shutdown initiated...
+[2022-09-03 15:39:05.212] [INFO ] [RMI TCP Connection(144)-127.0.0.1] com.zaxxer.hikari.HikariDataSource HikariPool-25 - Shutdown completed.
