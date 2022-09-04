@@ -1,0 +1,8 @@
+package test.product;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+//	리포지토리 생성
+public interface ProductRepository extends JpaRepository<Product, Long>{
+
+}
