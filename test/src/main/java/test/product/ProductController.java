@@ -72,7 +72,6 @@ public class ProductController {
 	public ResponseEntity<ProductResponseDTO> changeProductName(@RequestBody ChangeProductNameDTO changeProductNameDTO) throws Exception{
 		log.info("call changeProductName : {}", changeProductNameDTO);
 		ProductResponseDTO productResponseDTO = productService.changeProuctName(changeProductNameDTO.getNumber(), changeProductNameDTO.getName());
-		
 		return ResponseEntity.status(HttpStatus.OK).body(productResponseDTO);
 	}
 	

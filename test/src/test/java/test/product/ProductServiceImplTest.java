@@ -25,15 +25,9 @@ public class ProductServiceImplTest {
 	@BeforeEach
 	public void setUpTest() {
 		productServiceImpl = new ProductServiceImpl(productRepository);
-		
-		System.out.println("시작 : " + LocalDateTime.now());
-		
+	
 	}
 	
-	@AfterEach
-	public void endTest() {
-		System.out.println("종료 : " + LocalDateTime.now());
-	}
 	
 	@Test
 	@DisplayName("상품조회")
